@@ -1,26 +1,183 @@
-/*STYLING INFO*/
-.info {
-    border: 2px double red;
-    background-color: darkcyan;
-    color: yellow;
-    margin:20px 20px;
-    padding: 10px 10px;
-  }
-  h4 {
-    text-decoration: underline;
-    text-decoration-color: red;
-  }
-  /*STYLING GENERATOR*/
-  .generator {
-    border: 2px double red;
-    background-color: darkcyan;
-    color: yellow;
-    margin:20px 20px;
-    padding: 10px 10px;
-  }
-  .generator textarea {
-    max-width: 325px;
-  }
+/* ================================
+   CSS RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
-  
+/* ================================
+   GLOBAL STYLES
+================================ */
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url('PressStart2P-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.6;
+  background-color: #005050;
+  color: yellow;
+  padding-top: 80px;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: yellow;
+}
+
+a {
+  color: red;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ================================
+   SECTION STYLING
+================================ */
+.scroll-section {
+  background: #002222;
+  border: 1px solid red;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1000px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  transform: none;
+}
+
+.scroll-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(255, 0, 0, 0.4);
+  border: 1px solid yellow;
+}
+
+/* ================================
+   FORM ELEMENTS
+================================ */
+input,
+textarea,
+select,
+button {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.85rem;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid yellow;
+  border-radius: 8px;
+  background-color: #003636;
+  color: yellow;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: rgba(255, 255, 0, 0.6);
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  background-color: #004f4f;
+  box-shadow: 0 0 0 2px red;
+}
+
+/* ================================
+   BUTTON STYLES
+================================ */
+.cta-button,
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: yellow;
+  color: darkcyan;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.cta-button:hover,
+button:hover {
+  background-color: #ffe100;
+}
+
+/* ================================
+   HASH COMPARE VISUALIZER
+================================ */
+#byteVisualizer span.match {
+  color: yellow;
+  font-weight: bold;
+}
+
+#byteVisualizer span.mismatch {
+  color: red;
+  font-weight: bold;
+}
+
+#comparison-result.match {
+  color: yellow;
+  font-weight: bold;
+}
+
+#comparison-result.mismatch {
+  color: red;
+  font-weight: bold;
+}
+
+#comparison-result.warning {
+  color: orange;
+  font-weight: bold;
+}
+
+.terminal {
+  margin-top: 1rem;
+  background-color: #002222;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid red;
+  font-size: 0.8rem;
+  color: yellow;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+textarea.hash1,
+textarea.hash2 {
+  flex: 1;
+  min-height: 60px;
+}
