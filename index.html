@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hash Generator | Portfolio-OS Tools</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body>
+        <h1>Hash Generator</h1>
+        <details>
+          <summary class="summary">
+            <h3>Why are hashes useful to me?</h3>
+          </summary>
+    <section class="info">
+    <h4>Password Security</h4>
+    <ul>
+      <li>You should never store a users actual password - only the hashed version.</li>
+      <li>When a user logs in you hash thier input and compare it to the original stored hash.</li>
+      <li>This means even if your database was leaked, the data is not exposed.</li>
+    </ul>
+    <h4>File Integrity Checks</h4>
+    <ul>
+      <li>Generate a hash for a file and save it.</li>
+      <li>Later regenerate the hash and compare it, if its the same the file has not been altered.</li>
+      <li>Useful for detecting tampering in files</li>
+    </ul>
+    <h4> Data Dedublication</h4>
+    <ul>
+      <li>Hashes help to detect dublicate data quickly.</li>
+      <li>if two documents have the same hash then they are identical.</li>
+    </ul>
+    <h4>unique Identifiers</h4>
+    <ul>
+    <li>Hashes act like digital fingerprints</li>
+    <li>Generate a hash from users data, messages or files to give them a unique ID.</li>
+    </ul>
+    <h4>Caching and Performance</h4>
+    <ul>
+      <li>Uses hashes to check when data changes.</li>
+      <li>if the hash of a file is unchanged, the file is unchanged.</li>
+    </ul>
+    <h4>Veryfying Downloads</h4>
+    <ul>
+      <li>Websites often provide hash keys along with file downloads.</li>
+      <li>You can compare downloaded hash keys with originals.</li>
+    </ul>
+    </section>
+    </details>
+    
+    <section class="generator">
+    <!--INPUT TEXTAREA-->
+    <label for="inputText">Enter Text to Hash:</label>
+    <textarea id="inputText" rows="5" cols="50"> </textarea>
+    
+    <!--ALGORITHM DROPDOWN-->
+    <label for="algorithm">Choose Hash Algorithm:</label>
+    <select id="algorithm">
+      <option value="SHA-1">SHA-1</option>
+      <option value="SHA-256">SHA-256</option>
+      <option value="SHA-384">SHA-384</option>
+      <option value="SHA-512">SHA-512</option>
+    </select>
+    
+    <!--GENERATE BUTTON-->
+    <button id="generateBtn">Generate Hash</button>
+    
+    <!--COPY BUTTON-->
+    <button id="copyBtn">Copy</button>
+    
+    <!--CLEAR BUTTON-->
+    <button id="clearBtn">Clear</button>
+    
+    <!--OUTPUT DISPLAY-->
+    <label for="outputHash">Hash Output</label>
+    <textarea id="outputHash" rows="5" cols="50" readonly></textarea>
+    </section>
+
+
+
+    <section class="hash-compare-tool">
+
+        <!--CONTAINER FOR WIDGET-->
+  <div id="hash-compare-widget">
+    <h2>Hash Comparison Tool</h2>
+    <!--WIDGET EXPANDABLE INFO-->
+    
+    
+    <section class="hashComp" id="hashComp">
+      <!--INPUT FOR ORIGINAL HASH KEY-->
+      <label for="hash1">Type/Paste Original Hash:</label>
+      <div class="input-group">
+     <textarea class="hash1" id="hash1" placeholder="Orignal Hash Here..."></textarea>
+     <button class="copyBtn" id="copyHash1">Copy</button>
+      </div>
+      
+      
+     <!--INPUT FOR USER HASH KEY-->
+      <label for="hash2">Type/Paste Your Key:</label>
+      <div class="input-group">
+     <textarea class="hash2" id="hash2" placeholder="Your Key Here..."></textarea>
+     <button class="copyBtn" id="copyHash2">Copy</button>
+      </div>
+     
+    <!--COMPARE BUTTON-->
+     <button class="compareBtn" id="compareBtn">Compare Keys</button>
+    <!--RESET BUTTON-->
+     <button class="resetBtn" id="resetBtn">Reset</button>
+     
+     <!--BYTE COMPARISON TOGGLE-->
+     <label>
+       <input type="checkbox" id="toggleVisualizer"> Show Byte-by-Byte Comparison
+     </label>
+     <!--BYTE VISUALIZER OUTPUT-->
+     <div id="byteVisualizer"></div>
+     
+     
+     
+    <!--RESULT TERMINAL CONTAINER-->
+     <div class="terminal">
+     <div id="comparison-result"></div>
+     </div>
+
+    </section>
+  </div>
+
+    </section>
+    
+    <!--CALL JAVASCRIPT-->
+    <script src="script.js"></script>
+  </body>
+
+</html>

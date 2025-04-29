@@ -1,0 +1,26 @@
+/*STYLING INFO*/
+.info {
+    border: 2px double red;
+    background-color: darkcyan;
+    color: yellow;
+    margin:20px 20px;
+    padding: 10px 10px;
+  }
+  h4 {
+    text-decoration: underline;
+    text-decoration-color: red;
+  }
+  /*STYLING GENERATOR*/
+  .generator {
+    border: 2px double red;
+    background-color: darkcyan;
+    color: yellow;
+    margin:20px 20px;
+    padding: 10px 10px;
+  }
+  .generator textarea {
+    max-width: 325px;
+  }
+
+
+  
